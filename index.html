@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Adel - Pharmaceutical Sales Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #1a6aa2;
+            --primary-dark: #0d4d7a;
+            --secondary: #2c3e50;
+            --light: #f5f7fa;
+            --dark: #333;
+            --gray: #666;
+            --border: #eaeaea;
+            --shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -13,8 +25,8 @@
         }
         
         body {
-            background-color: #f5f7fa;
-            color: #333;
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
         }
         
@@ -25,24 +37,26 @@
         }
         
         header {
-            background: linear-gradient(135deg, #1a6aa2 0%, #0d4d7a 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             padding: 40px 0;
             text-align: center;
         }
         
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             border: 4px solid white;
             margin: 0 auto 20px;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: #1a6aa2;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         h1 {
@@ -75,14 +89,19 @@
             background: white;
             margin: 20px 0;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
         }
         
         h2 {
-            color: #1a6aa2;
+            color: var(--primary);
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #eaeaea;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
         }
         
         .section-content {
@@ -99,14 +118,14 @@
         }
         
         .date {
-            color: #666;
+            color: var(--gray);
             font-style: italic;
             margin-bottom: 5px;
         }
         
         .company {
             font-weight: 600;
-            color: #1a6aa2;
+            color: var(--primary);
         }
         
         .responsibilities {
@@ -138,14 +157,85 @@
             margin: 8px 0;
             padding: 10px 15px;
             border-radius: 4px;
-            border-left: 4px solid #1a6aa2;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .skill-level {
+            width: 100px;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background: var(--primary);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .project-description {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
         }
         
         footer {
-            background: #2c3e50;
+            background: var(--secondary);
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
             margin-top: 40px;
         }
         
@@ -159,27 +249,33 @@
             .skills-container {
                 flex-direction: column;
             }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="profile-img">MA</div>
+            <div class="profile-img">
+                <img src="https://raw.githubusercontent.com/MohamedAdel-Bo/MohamedAdel-Bo.github.io/refs/heads/main/assets/pfp.jpg" alt="Mohamed Adel">
+            </div>
             <h1>Mohamed Adel Hassan</h1>
             <div class="title">Pharmaceutical Sales Professional</div>
             <div class="contact-info">
                 <div class="contact-item">
-                    <span>📍 Dakahlia, Egypt</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Dakahlia, Egypt</span>
                 </div>
                 <div class="contact-item">
-                    <span>📞 01014902948</span>
+                    <i class="fas fa-phone"></i>
+                    <span>01014902948</span>
                 </div>
                 <div class="contact-item">
-                    <span>✉️ mohamedboghdady772@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <span>🔗 www.linkedin.com/in/mohamedadel77</span>
+                    <i class="fas fa-envelope"></i>
+                    <span>mohamedboghdady772@gmail.com</span>
                 </div>
             </div>
         </div>
@@ -246,25 +342,123 @@
                     <div class="skill-category">
                         <h3>Technical Skills</h3>
                         <ul class="skill-list">
-                            <li>Microsoft Word</li>
-                            <li>Microsoft Excel</li>
-                            <li>Microsoft PowerPoint</li>
+                            <li>
+                                <span>Microsoft Word</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 90%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Microsoft Excel</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 85%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Microsoft PowerPoint</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 95%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>CRM Software</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 80%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Data Analysis</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 75%"></div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     
                     <div class="skill-category">
                         <h3>Soft Skills</h3>
                         <ul class="skill-list">
-                            <li>Communication</li>
-                            <li>Negotiation</li>
+                            <li>
+                                <span>Communication</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 95%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Negotiation</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 90%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Relationship Building</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 92%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Territory Management</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 88%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Product Launch</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 85%"></div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     
                     <div class="skill-category">
                         <h3>Language</h3>
                         <ul class="skill-list">
-                            <li>English</li>
+                            <li>
+                                <span>English</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 85%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Arabic (Native)</span>
+                                <div class="skill-level">
+                                    <div class="skill-fill" style="width: 100%"></div>
+                                </div>
+                            </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <div class="section-content">
+                <h2>Projects & Achievements</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">Diabetes Product Launch</div>
+                        <div class="project-description">
+                            Successfully launched a new Dapagliflozin-based diabetes medication, achieving 120% of target sales in the first quarter through strategic physician engagement.
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Garcinia Product Success</div>
+                        <div class="project-description">
+                            Drove sales growth exceeding 150% for a Garcinia product through targeted marketing and effective territory management strategies.
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Territory Expansion</div>
+                        <div class="project-description">
+                            Expanded pharmaceutical product reach by 40% in assigned territory through systematic physician relationship building and needs assessment.
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Sales Training Program</div>
+                        <div class="project-description">
+                            Developed and implemented a training program for new medical representatives focusing on product knowledge and effective communication techniques.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -273,6 +467,21 @@
     
     <footer>
         <div class="container">
+            <h3>Get In Touch</h3>
+            <div class="social-links">
+                <a href="www.linkedin.com/in/mohamedadel77" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:mohamedboghdady772@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/MohamedAdel-Bo" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="tel:01014902948" class="social-link">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
             <p>&copy; 2025 Mohamed Adel Hassan. All rights reserved.</p>
         </div>
     </footer>
